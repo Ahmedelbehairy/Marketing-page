@@ -1,0 +1,83 @@
+
+<!-- form for Login -->
+<div class="py-3 text-center d-flex flex-column justify-content-center">
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)"
+    class="mb-5 d-flex flex-column align-items-center justify-content-center">
+    <div class="mb-5">
+      <h2>HALLO!</h2>
+      <h1>JOIN US NOW!</h1>
+    </div>
+    <!-- Name input -->
+    <div class="w-100 d-flex flex-column align-items-center">
+      <label for="Name"></label>
+      <input ngModel #name="ngModel" class=" p-3 mb-3 w-75 border-0 rounded-5"
+        id="name" type="text" name="name" placeholder="Enter Your Name"
+        required minlength="4" maxlength="15">
+      <!-- validate -->
+      <div *ngIf="name.invalid && name.dirty">
+        <p class="m-0 fCC-Bold-sA cCC-text-Light-Red-color"
+          *ngIf="name.errors?.['required']">
+          The name is required</p>
+        <p class="m-0 fCC-Bold-sA cCC-text-Light-Red-color"
+          *ngIf="name.errors?.['minlength']">
+          The name should start with 4 Letters </p>
+      </div>
+    </div>
+    <!-- Email input -->
+    <div class="w-100 d-flex flex-column align-items-center">
+      <label for="Email"></label>
+      <input ngModel #email="ngModel" class=" p-3 mb-3 w-75 border-0 rounded-5"
+        type="email" name="email" placeholder="Enter Your Email"
+        required>
+      <!-- validate -->
+      <div *ngIf="email.invalid && email.dirty">
+        <p class="m-0 fCC-Bold-sA cCC-text-Light-Red-color"
+          *ngIf="email.errors?.['required']">
+          The email is required</p>
+        <p class="m-0 fCC-Bold-sA cCC-text-Light-Red-color"
+          *ngIf="email.errors?.['email']">
+          This is not a valid Email!!! </p>
+      </div>
+    </div>
+    <!-- Phone input -->
+    <div class="w-100 d-flex flex-column align-items-center">
+      <label for="Phone"></label>
+      <input ngModel #phone="ngModel" class=" p-3 mb-3 w-75 border-0 rounded-5"
+        type="number" name="phone" placeholder="Enter Your Phone"
+        required pattern="^[01](0|1|2|4|5)[0-9]{6}$">
+      <!-- validate -->
+      <div *ngIf="phone.invalid && phone.dirty">
+        <p class="m-0 fCC-Bold-sA cCC-text-Light-Red-color"
+          *ngIf="phone.errors?.['required']">
+          The Phone is required</p>
+        <p class="m-0 fCC-Bold-sA cCC-text-Light-Red-color"
+          *ngIf="phone.errors?.['pattern']">
+          The Phone is required </p>
+      </div>
+    </div>
+    <!-- password Input -->
+    <div class="w-100 d-flex flex-column align-items-center">
+      <label for="Password"></label>
+      <input ngModel #password="ngModel" class=" p-3 mb-3 w-75 border-0
+        rounded-5" type="password" name="password" placeholder="Enter Your Password"
+        required pattern="^[A-Z]{1}([a-z]|[0-9]){4,15}$">
+      <!-- validate -->
+      <div *ngIf="password.invalid && password.dirty">
+        <p class="m-0 fCC-Bold-sA cCC-text-Light-Red-color"
+          *ngIf="password.errors?.['required']">
+          The password is required</p>
+        <p class="m-0 fCC-Bold-sA cCC-text-Light-Red-color"
+          *ngIf="password.errors?.['pattern']">
+          Your password should start with capital letter and No less than 5
+          letters </p>
+      </div>
+    </div>
+    <!-- submit btn -->
+    <button [disabled]='registerForm.invalid' class=" text-white p-3 mt-4 w-75
+      border-0 rounded-4 bg-danger" type="submit"> SING UP </button>
+    <div class="d-flex mt-1 justify-content-around">
+      <a class="" routerLink="/reg-log-page/login"> Click Here To Sing Up </a>
+    </div>
+    <h1 class="fCC-Bold-sD cCC-text-Light-Red-color mt-2" *ngIf="error">{{error}}</h1>
+  </form>
+</div>

@@ -1,0 +1,28 @@
+<div class="border-2 py-2 h-100 bg-black border-bottom border-top">
+    <!-- select Products -->
+    <div class="d-flex flex-column bg-black text-white text-center
+      align-items-center">
+      <a><i class="iCC-Contact-Icon-logo logo iCC-Background-Cover
+          d-inline-block"></i></a>
+      <div>
+        <div class="px-2">
+          <h1 class="fCC-Bold-sE">Select :</h1>
+            <select class="p-1 mb-5 w-100 bg-black text-white"
+              (change)="itemsChange($event)"> <!-- function for chang item -->
+              <option value="All" selected>All</option>
+              <option value="{{item}}" *ngFor="let item of data">{{item}}</option> <!-- Some Item of Products -->
+            </select>
+        </div>
+        <div class="px-2 mt-5 text-white">
+          <a href="https://www.google.com/"><i class="text-danger fs-3 fa-brands
+              fa-google"></i></a>
+          <a href="https://www.apple.com/eg-ar/iphone/"><i class="mx-3 fs-3
+              text-dark fa-brands fa-apple"></i></a>
+          <a href="https://www.facebook.com/"><i class=" fa-brands fs-3
+              fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

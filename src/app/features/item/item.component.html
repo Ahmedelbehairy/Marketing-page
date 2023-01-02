@@ -1,0 +1,138 @@
+<div class="container position-relative py-5">
+  <div class="row p-0 m-0">
+    <div class="col-lg-3 my-3" *ngFor="let item of data">
+      <div class="item-width position-relative rounded-5 cCC-bg-White">
+        <div class="img-width parent position-relative">
+          <img class="child w-100 h-100 rounded-5" src="{{item.image}}" alt="">
+          <!-- img for Products -->
+          <div class="children p-2 text-center d-flex flex-column
+            justify-content-center
+            align-items-center position-absolute cCC-bg-OffWhite w-100 h-100">
+            <!-- hovering for Products -->
+            <p class="m-0 fCC-Bold-sB description overflow-hidden">{{item.description}}</p>
+            <!-- description for Products -->
+            <div class="d-flex w-100 justify-content-between
+              align-items-end ">
+              <p class="m-0 fCC-Bold-sB cCC-text-Secondary-color"><span
+                  class="cCC-text-Light-Red-color">Count :</span>{{item.rating.count}}</p>
+              <!-- count for Products -->
+              <p class="m-0 fCC-Bold-sB cCC-text-Secondary-color"><span
+                  class="cCC-text-Light-Red-color">Rate :</span>{{item.rating.rate}}</p>
+              <!-- rate for Products -->
+            </div>
+          </div>
+        </div>
+        <div class="d-flex pb-5 mb-4 px-2 justify-content-center">
+          <p class="m-0 fCC-Bold-sB"> {{item.title}} </p> <!-- name for Products -->
+        </div>
+        <button (click)="getIdProduct(item.id)" type="button" class="m-2
+          cCC-bg-secondary btn rounded-3 p-2
+          position-absolute bottom-0"
+          data-bs-toggle="modal" data-bs-target="#exampleModal">
+          ADD TO CART
+        </button> <!-- button for modal -->
+        <p class="m-2 fCC-Bold-sD position-absolute bottom-0 end-0
+          "> ${{item.price}} </p> <!-- price for Products -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal"
+        aria-label="Close"></button>
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="row px-4">
+          <div class="col-lg-6">
+            <img class="w-100"
+              src="{{oneProduct?.image}}"
+              alt="">
+            <div class="row">
+              <div class="col-3 p-2">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h1 class="fCC-Bold-sP">{{oneProduct?.title}}</h1>
+            <div class="w-100 border-bottom border-1">
+              <ul class="w-100 border-bottom border-1">
+                <li>rate: {{oneProduct?.rating.rate}} </li>
+                <li>count: {{oneProduct?.rating.count}}</li>
+              </ul>
+            </div>
+            <h1>$ {{oneProduct?.price}}</h1>
+            <h4>category: {{oneProduct?.category}}</h4>
+            <p class="m-0">Size</p>
+            <div>
+              <select>
+                <option label="-- please select --"></option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+            </div>
+            <p class="m-0 w-100">color</p>
+            <div class="d-flex">
+              <div class="mx-3 border-1 rounded-circle cCC-bg-dark-blue p-4"></div>
+              <div class="mx-3 border-1 rounded-circle cCC-bg-grey p-4"></div>
+              <div class="mx-3 border-1 rounded-circle cCC-bg-blue-dark p-4"></div>
+            </div>
+            <div class="d-flex border-bottom border-1 mb-4">
+              <p class="mx-3 m-0 fCC-Bold-sA"> dark Blue </p>
+              <p class="mx-3 m-0 fCC-Bold-sA"> Dark Gray </p>
+              <p class="mx-3 m-0 fCC-Bold-sA"> Light Blue</p>
+            </div>
+            <div>
+              <p class="m-0 cCC-text-grey-color">{{oneProduct?.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="d-flex w-100">
+          <div class="cCC-bg-dark-blue ADD w-100 d-flex">
+            <input class="py-1 me-1" min="1" type="number" value="1"
+              [(ngModel)]="numberOfCart">
+            <div class="d-flex w-100 justify-content-center align-items-center">
+              <i class="iCC-Contact-Icon-shopping-bag ms-1 bag
+                d-inline-block iCC-Background-Cover"></i>
+              <button (click)="add()" class="btn cCC-text-White-color
+                fCC-Bold-sB me-lg-3" data-bs-dismiss="modal"
+                aria-label="Close"> ADD TO
+                CARD</button>
+            </div>
+          </div>
+          <button mat-raised-button class="btn rounded-3 cCC-bg-grey ADD mx-2"
+            mat-tooltip-panel="mat-tooltip-panel-left"
+            matTooltip="Add to wish list"
+            aria-label="Button that displays a tooltip when focused or
+            hovered over">
+
+          </button>
+          <button mat-raised-button class="btn rounded-3 cCC-bg-grey ADD mx-2"
+            mat-tooltip-panel="mat-tooltip-panel-left"
+            matTooltip="Like this product"
+            aria-label="Button that displays a tooltip when focused or
+            hovered over">
+            <i class="iCC-Contact-Icon-heart ms-1 bag
+              d-inline-block iCC-Background-Cover"></i>
+          </button>
+          <button mat-raised-button
+            class="btn rounded-3 cCC-bg-Main ms-2"
+            matTooltip="Go To Cart"
+            aria-label="Button that displays a tooltip when focused or hovered
+            over" routerLink="/cart" data-bs-dismiss="modal" aria-label="Close">
+            <i class="iCC-Contact-Icon-right-arrow ms-1 bag
+              d-inline-block iCC-Background-Cover"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

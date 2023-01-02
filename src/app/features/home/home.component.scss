@@ -1,0 +1,27 @@
+*{
+  z-index: 10;
+}
+.slide
+{
+  margin-top: 4.5rem !important;
+}
+img{
+  height: 400px !important;
+}
+.carousel-indicators
+{
+  z-index: 20;
+}
+.next
+{
+  top:184px ;
+}
+.prev
+{
+  top: 216px;
+}
+.carousel-control-next
+{
+  height: 0px !important;
+}
+

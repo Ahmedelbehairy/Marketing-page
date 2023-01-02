@@ -1,0 +1,15 @@
+<div class="position-absolute title">
+  <app-change-products [data]="Categories" (selectedValue)="changeProduct($event)"></app-change-products>
+</div>
+
+
+<app-item  *ngIf="!loading" [data]="products" (item)="addToCart($event)"></app-item>
+
+  <div *ngIf="loading" class="h-100 w-100 d-flex justify-content-center
+    align-items-center">
+    <app-spinner></app-spinner>
+  </div>
+
+
+
+

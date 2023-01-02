@@ -1,0 +1,32 @@
+<nav *ngIf="lock" class="navbar navbar-expand-lg">
+  <div class=" d-flex container-fluid position-fixed logo top-0 end-0 start-0
+    w-100">
+    <div class="container p-0 d-flex justify-content-between">
+      <a class="navbar-brand" routerLink='/home'><i class="iCC-Contact-Icon-logo
+          iCC-Background-Cover d-inline-block"></i></a> <!-- to home link -->
+      <!-- button for response -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-flex align-items-center">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav me-3">
+            <a class="nav-link d-flex" routerLink="cart">Cart<i
+                class="iCC-Contact-Icon-add-cart cart ms-1 iCC-Background-Cover
+                d-inline-block"></i></a> <!-- to cart link -->
+            <a class="nav-link d-flex" (click)="logout()">Logout<i
+                class="iCC-Contact-Icon-logout cart ms-1 iCC-Background-Cover
+                d-inline-block"></i></a> <!-- to login link -->
+          </div>
+        </div>
+        <div>
+          <a class="nav-link" routerLink="profile"> <i
+              class="iCC-Contact-Icon-profile iCC-Background-Cover
+              d-inline-block"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

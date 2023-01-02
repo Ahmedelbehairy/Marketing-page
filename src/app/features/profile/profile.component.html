@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center d-flex border-1 py-3 border-bottom border-dark">
+    <div class="col-md-2 mt-3">
+      <img class="w-50 h-50 rounded-circle" src="../../../assets/img/user.png" alt="">
+    </div>
+    <div class="offset-md-1 mt-5 col-md-4">
+      <p class="m-0 mb-4 d-flex justify-content-between">Your Name: ahmed <button class="btn cCC-bg-Main w-25 rounded"> EDIT </button></p>
+      <p class="m-0 d-flex justify-content-between">Your Phone: 01143208293 <button class="btn cCC-bg-Main w-25 rounded"> EDIT </button></p>
+      <p class="m-0 mt-4 d-flex justify-content-between">Your Email: ahmed123@gmail.com <button class="btn cCC-bg-Main w-25 rounded"> EDIT </button></p>
+    </div>
+  </div>
+  <div class="row justify-content-center d-flex mt-3 ">
+    <div *ngIf="show" class="w-100 mb-4 rounded-2 cart-div d-flex flex-column justify-content-center align-items-center">
+    <button mat-raised-button
+            class="btn"
+            matTooltip="Go To Home"
+            aria-label="Button that displays a tooltip when focused or hovered
+            over">
+            <i routerLink="/home" class="iCC-Contact-Icon-cart iCC-Background-Cover d-inline-block cart"></i>
+          </button>
+    <h3 class=" my-4">Your Cart Is Empty!</h3>
+    <button routerLink="/home" class="btn mt-4 cCC-bg-secondary">START SHOPPING</button> <!-- button to go home -->
+  </div>
+    <div *ngIf="!show" class="w-100 pb-3 d-flex flex-column align-items-center rounded-2 cCC-bg-Main">
+      <div class="d-flex box-cart justify-content-between m-4">
+        <h3>The Item You Purchased</h3>
+      </div>
+      <div  *ngFor="let item of cartProduct ; let index = index"
+      class="my-2 row box-cart flex-wrap p-2 border-bottom border-5 border-dark d-flex text-center justify-content-between align-items-center rounded cCC-bg-secondary">
+        <div class="col-md-2"><img class=" px-0 item-img rounded-circle" src="{{item.item.image}}" alt=""></div>
+          <p class="col-md-3 px-0 m-0">name :{{item.item.title}}</p>
+          <p class="col-md-2 px-0 m-0">quantity :{{item.quantity}}</p>
+          <p class="col-md-2 px-0 m-0 ">Total Price : {{item.item.price * item.quantity}} $</p>
+        <button (click)="deleteProduct(index)" class="col-md-1 btn px-0 d-flex cCC-bg-Main"><i class="me-3 iCC-Contact-Icon-remove iCC-Background-Cover d-inline-block"></i> delete </button> <!-- button -->
+      </div>
+      <div class="d-flex mt-3 box-cart align-items-center justify-content-end">
+        <p class="m-0 rounded cCC-bg-secondary p-2">Total Price : {{total}} $</p>
+    </div>
+  </div>
+  </div>
+</div>

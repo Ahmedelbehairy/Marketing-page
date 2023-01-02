@@ -1,0 +1,42 @@
+<div class="container vh-100 d-flex flex-column justify-content-center px-0">
+  <div *ngIf="loading" class="h-100 w-100 d-flex justify-content-center
+    align-items-center">
+    <app-spinner></app-spinner>
+  </div>
+  <div *ngIf="!show" class="w-100 mb-4 rounded-2 cart-div d-flex flex-column justify-content-center align-items-center">
+    <button mat-raised-button
+            class="btn"
+            matTooltip="Go To Home"
+            aria-label="Button that displays a tooltip when focused or hovered
+            over">
+            <i routerLink="/home" class="iCC-Contact-Icon-cart iCC-Background-Cover d-inline-block cart"></i>
+          </button>
+    <h3 class=" my-4">Your Cart Is Empty!</h3>
+    <button routerLink="/home" class="btn mt-4 cCC-bg-secondary">START SHOPPING</button> <!-- button to go home -->
+  </div>
+    <div *ngIf="show" class="w-100 pb-3 d-flex flex-column align-items-center rounded-2 cCC-bg-Main">
+      <div class="d-flex box-cart justify-content-between m-4">
+        <p class="m-0 rounded-5 p-2 pt-1 bg-black text-white">CART <span class="fCC-Bold-sG"> ({{cartProduct.length}}) </span></p> <!--number of items in cart-->
+        <button (click)="deleteAllProduct()"  class="p-2 btn cCC-bg-secondary d-flex"> <i class="me-3 iCC-Contact-Icon-remove-all remove iCC-Background-Cover d-inline-block"></i>DELETE ALL CART</button>
+      </div>
+      <div  *ngFor="let item of cartProduct ; let index = index"
+      class="my-2 row box-cart flex-wrap p-2 border-bottom border-5 border-dark d-flex justify-content-between text-center align-items-center rounded cCC-bg-secondary">
+        <div class="col-md-2"><img class="px-0 rounded-5" src="{{item.item.image}}" alt=""></div>
+          <p class="col-md-2 px-0 m-0">name :{{item.item.title}}</p>
+          <p class="col-md-2 px-0 m-0">price :{{item.item.price}} $</p>
+          <div class="col-md-2 px-0 d-flex justify-content-center align-items-center">
+            <i (click)="plusCart(index)"class="iCC-Contact-Icon-plus iCC-Background-Cover me-1 d-inline-block"></i>
+          <input type="number" class="py-2 w-50 text-center" (change)="detectChange()" [(ngModel)]="item.quantity" min="1">
+            <i (click)="minsCart(index)"class="iCC-Contact-Icon-incorrect iCC-Background-Cover ms-1 d-inline-block"></i>
+          </div>
+          <p class="col-md-2 px-0 m-0 ">Total Price : {{item.item.price * item.quantity}} $</p>
+        <button (click)="deleteProduct(index)" class="col-md-1 d-flex btn cCC-bg-Main"><i class="me-3 iCC-Contact-Icon-remove remove iCC-Background-Cover d-inline-block"></i> delete </button> <!-- button -->
+      </div>
+      <div class="d-flex mt-3 align-items-center justify-content-end w-75 rounded">
+        <p class="m-0 me-4">Total Price : {{total}} $</p>
+      <button (click)="addCart()" class="btn cCC-bg-secondary">ORDER NOW</button> <!-- button -->
+    </div>
+  </div>
+  <div *ngIf="Successfully" class="cart-div rounded-5 h-auto w-50 py-2 opacity-75 d-flex justify-content-center align-items-center "> <p class="m-0"> Your Order Is Successfully </p> </div>
+</div>
+

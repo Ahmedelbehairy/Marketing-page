@@ -1,0 +1,216 @@
+// vars colors
+$main :#e66465;
+$dark: #3E4141;
+$secondary: #9198e5;
+$dark-blue: rgba(58, 71, 84, 1);
+$blue-dark: rgba(44, 54, 64, 1);
+$selective-yellow: #fbb80064;
+$white: #ffffff;
+$offWhite: rgba(219, 232, 242, 0.372);
+$white-light: rgba(240, 242, 245, 1);
+$light-red: red;
+$light-white: rgb(247, 248, 251);
+$blue: #00e4f9;
+$black: #000;
+$light-green: #487b82c8;
+$yellow: #fb8f03;
+$grey: rgba(105, 105, 115, 1);
+
+// START === Background Color
+.cCC-bg-Transparent {
+  background-color: transparent !important;
+}
+
+.cCC-bg-Inherit {
+  background-color: inherit !important;
+}
+
+.cCC-bg-Main {
+  background-color: $main !important;
+}
+
+.cCC-bg-yellow {
+  background-color: $yellow !important;
+}
+
+.cCC-bg-dark-blue {
+  background-color: $dark-blue !important;
+}
+
+.cCC-bg-blue-dark {
+  background-color: $blue-dark !important;
+}
+
+.cCC-bg-dark {
+  background-color: $dark !important;
+}
+
+.cCC-bg-light-green {
+  background-color: $light-green !important;
+}
+
+.cCC-bg-black {
+  background-color: $black !important;
+}
+
+.cCC-bg-blue {
+  background-color: $blue !important;
+}
+
+.cCC-bg-White {
+  background-color: $white !important;
+}
+
+.cCC-bg-OffWhite {
+  background-color: $offWhite !important;
+}
+
+.cCC-bg-Light-White {
+  background-color: $light-white !important;
+}
+
+.cCC-bg-white-light {
+  background-color: $white-light !important;
+}
+
+.cCC-bg-grey {
+  background-color: $grey !important;
+}
+
+.cCC-bg-secondary {
+  background-color: $secondary !important;
+}
+
+.cCC-bg-slight-red {
+  background-color: $light-red !important;
+}
+
+// END === Background Color
+// START === Text Color
+.cCC-text-main-color {
+  color: $main !important;
+}
+
+.cCC-text-Dark-color {
+  color: $dark !important;
+}
+
+.cCC-text-Black-color {
+  color: $black !important;
+}
+
+.cCC-text-White-color {
+  color: $white !important;
+}
+
+.cCC-text-light-white-color {
+  color: $light-white !important;
+}
+
+.cCC-text-white-light-color {
+  color: $white-light !important;
+}
+
+.cCC-text-Secondary-color {
+  color: $secondary !important;
+}
+
+.cCC-text-grey-color {
+  color: $grey !important;
+}
+
+.cCC-text-Light-Red-color {
+  color: $light-red !important;
+}
+
+// END === Text Color
+// START === Background Color With Opacity
+.cCC-bg-main-With-Opacity-20 {
+  background-color: var(--cCC-bg-main-With-Opacity-20);
+}
+
+.cCC-bg-main-With-Opacity-80 {
+  background-color: var(--cCC-bg-main-With-Opacity-80);
+}
+
+.cCC-bg-Secondary-With-Opacity {
+  background-color: rgba($color: $secondary, $alpha: 0.04);
+}
+
+.cCC-bg-Secondary-With-Opacity-07 {
+  background-color: rgba($color: $secondary, $alpha: 0.07);
+}
+
+.cCC-bg-Secondary-With-Opacity-10 {
+  background-color: rgba($color: $secondary, $alpha: 0.1);
+}
+
+.cCC-bg-Secondary-With-Opacity-50 {
+  background-color: rgba($color: $secondary, $alpha: 0.5);
+}
+
+.cCC-bg-Secondary-With-Opacity-60 {
+  background-color: var(--cCC-bg-Secondary-With-Opacity-60);
+}
+
+.cCC-bg-Secondary-With-Opacity-80 {
+  background-color: var(--cCC-bg-main-With-Opacity-80);
+}
+
+.cCC-bg-Secondary-With-Opacity-70 {
+  background-color: rgba($color: $secondary, $alpha: 0.7);
+}
+
+.cCC-bg-Secondary-With-Opacity-34 {
+  background-color: rgba($color: $secondary, $alpha: 0.34);
+}
+
+.cCC-bg-light-red-With-Opacity-87 {
+  background-color: rgba($color: $light-red, $alpha: 0.87);
+}
+
+.cCC-bg-light-white-With-Opacity-95 {
+  background-color: rgba($color: $light-white, $alpha: 0.95);
+}
+
+.cCC-bg-Dark-With-Opacity-70 {
+  background-color: rgba($color: $dark, $alpha: 0.7);
+}
+
+.cCC-bg-Dark-With-Opacity-80 {
+  background-color: rgba($color: $dark, $alpha: 0.8);
+}
+
+.cCC-bg-Dark-With-Opacity-20 {
+  background-color: rgba($color: $dark, $alpha: 0.2);
+}
+
+// END === Background Color With Opacity
+// START === Text Color With Opacity
+.cCC-text-Secondary-With-Opacity-30 {
+  color: rgba($color: $secondary, $alpha: 0.3);
+}
+
+.cCC-text-Secondary-With-Opacity-50 {
+  color: rgba($color: $secondary, $alpha: 0.5);
+}
+
+.cCC-text-Secondary-With-Opacity-40 {
+  color: rgba($color: $secondary, $alpha: 0.4);
+}
+
+.cCC-text-Secondary-With-Opacity-60 {
+  color: rgba($color: $secondary, $alpha: 0.6);
+}
+
+.cCC-text-Secondary-With-Opacity-70 {
+  color: rgba($color: $secondary, $alpha: 0.7);
+}
+
+.cCC-text-Secondary-With-Opacity-80 {
+  color: rgba($color: $secondary, $alpha: 0.8);
+}
+
+.cCC-text-Secondary-With-Opacity-90 {
+  color: rgba($color: $secondary, $alpha: 0.9);
+}

@@ -1,0 +1,39 @@
+.title {
+  height: 360px !important;
+  left: 17%;
+  top: 11%;
+  z-index: 10;
+}
+
+@media screen and (max-width:1700px) {
+  .title {
+    height: 360px !important;
+    width: 180px !important;
+    left: 10% !important;
+    top: 11% !important;
+  }
+}
+@media screen and (max-width:1500px){
+  .title {
+      height: 360px !important;
+      width:150px !important;
+        left:7% !important;
+        top: 11% !important;
+    }
+}
+@media screen and (max-width:992px) {
+  .title {
+    height: 360px !important;
+    width: 130px !important;
+    left: 8% !important ;
+    top: 11% !important ;
+  }
+}
+@media screen and (max-width:500px) {
+  .title {
+    height: 360px !important;
+    width: 100px !important;
+    left: 1% !important ;
+    top: 11% !important ;
+  }
+}
